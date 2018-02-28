@@ -22,6 +22,7 @@ body {
     background-color: #fff;
 	font-size: 16px;
     line-height: 1.6em;
+    overflow: hidden;
 }
 
 html {
@@ -620,9 +621,9 @@ hr.bold {
 	position: relative; 
 	margin: 0 auto; 
 	text-align: center;
-	height: 0;
-	padding-top: 20%;
-	padding-bottom: 30%;
+	height: 100%;
+	padding-top: 0%;
+	padding-bottom: 0%;
 	position: relative;
 	overflow: hidden;
 	
@@ -1743,21 +1744,17 @@ a.btn:focus{
 	outline: 0;
 }
 
-.btn-red {
-  color: #fff;
-  background-color: #c83539;
-  border-color: #c83539;
-}
+
 .btn-red:hover,
 .btn-red:focus,
 .btn-red:active,
 .btn-red.active {
   color: #fff;
-  background-color: #666;
-  border-color: #666;
+  background-color: #533875;
+  border-color: #533875;
 }
 .btn-red:active {
-  background-image: none;
+  background-image: #533875;
 }
 
 
@@ -1766,17 +1763,17 @@ a.btn:focus{
 .btn-skin:active,
 .btn-skin.active {
   color: #fff;
-  background-color: #666;
-  border-color: #666;
+  background-color: #533875;
+  border-color: #533875;
 }
 
 
 .btn-default:hover,
 .btn-default:focus {
-    border: 1px solid #28c3ab;
+    border: 1px solid #533875;
     outline: 0;
     color: #000;
-    background-color: #28c3ab;
+    background-color: #533875;
 }
 
 .btn-huge {
