@@ -149,6 +149,15 @@
 		// The delay between each word in milliseconds
 		speed: 3000
 	});
+	
+	$("#js1-rotating").Morphext({
+		// Animation type (refer to Animate.css for a list of available animations)
+		animation: "fadeInUp",
+		// An array of words to rotate are created based on this separator. Change it if you wish to separate the words differently (e.g. So Simple | Very Doge | Much Wow | Such Cool)
+		separator: ",",
+		// The delay between each word in milliseconds
+		speed: 3000
+	});
 		
 	//nicescroll
 	$("html").niceScroll({zindex:999,cursorborder:"",cursorborderradius:"0px",cursorwidth:"10px",cursorcolor:"#555",cursoropacitymin:.5});
