@@ -1,112 +1,112 @@
-body{
-            margin: 50px 0 0;
-        }
-        a:hover,
-        a:focus{
-            text-decoration: none;
-            outline:none;
-        }
-        h3{
-            margin: 0;
-            font-weight: 700;
-        }
-        ul{
-            margin: 0 !important;
-            padding: 0;
-            list-style-type: none;
-        }
-        .pricing-table{
-            border: 1px solid #eee;
-            text-align: center;
-            padding-bottom: 20px;
-            color:#21328B;
-        }
-        .pricing-table .pricing-header{
-            background-color:#F06449;
-            padding: 15px 0;
-            color: #ffffff;
-            text-transform: uppercase;
-            margin-bottom: 30px;
-            position: relative;
-            transition:all 0.3s ease 0s;
-        }
-        .pricing-table:hover .pricing-header{
-            background-color: #5BC3EB;
-        }
-        .pricing-table .pricing-header:after{
-            content: "";
-            position: absolute;
-            bottom: -15px;
-            left: 45%;
-            border-top: 15px solid #F06449;
-            border-left: 15px solid transparent;
-            border-right: 15px solid transparent;
-            transition:all 0.3s ease 0s;
-        }
-        .pricing-table:hover .pricing-header:after{
-            border-top-color: #5BC3EB;
-        }
-        .pricing-table .price-value{
-            margin-bottom: 20px;
-        }
-        .pricing-table .price-value .amount{
-            display: block;
-            font-size: 60px;
-            color:#3747A0;
-            line-height: 65px;
-        }
-        .pricing-table .price-value .time{
-            font-size: 15px;
-            text-transform: capitalize;
-        }
-        .pricing-table .pricingContent ul{
-            line-height: 50px;
-            font-size: 15px;
-            background-color: #F5F5F5;
-            border-top: 2px solid #ddd;
-        }
-        .pricing-table .pricingContent ul li{
-            border-bottom: 1px solid #ddd;
-        }
-        .pricing-table .pricingContent ul li:last-child{
-            border-bottom: none;
-        }
-        .pricing-table .purchase{
-            background-color: #F06449;
-            padding: 30px 0;
-            position: relative;
-            transition:all 0.3s ease 0s;
-        }
-        .pricing-table:hover .purchase{
-            background-color: #5BC3EB;
-        }
-        .pricing-table .purchase:before{
-            content: "";
-            position: absolute;
-            top: 0px;
-            left: 45%;
-            border-top: 15px solid #fff;
-            border-left: 15px solid transparent;
-            border-right: 15px solid transparent;
-        }
-        .pricing-table .purchase a{
-            display:inline-block;
-            border: 2px solid #fff;
-            background-color:transparent;
-            color:#fff;
-            font-weight: 600;
-            padding: 10px 20px;
-            font-size: 15px;
-            text-transform:uppercase;
-            transition:all 0.3s ease 0s;
-        }
-        .pricing-table .purchase a:hover{
-            color:#5BC3EB ;
-            background-color:#fff;
-        }
+/* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
 
-        @media screen and (max-width:1000px){
-            .pricing-table{
-                margin-bottom: 30px;
-            }
-        }
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    line-height: 25px;
+    font-weight: 300;
+    color: #5a6266;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    margin: 0;
+    color: #232a34;
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+}
+h1, .h1 {
+    font-size: 45px;
+    line-height: 55px;
+    padding: 0 0 40px 0;
+    font-weight: 100;
+}
+h2, .h2 {
+    font-size: 40px;
+    line-height: 49px;
+    padding: 0 0 40px 0;
+    font-weight: 100;
+}
+h3, .h3 {
+    font-size: 30px;
+    line-height: 37px;
+    padding: 0 0 30px 0;
+    font-weight: 100;
+}
+h4, .h4 {
+    font-size: 25px;
+    line-height: 30px;
+    padding: 0 0 5px 0;
+    font-weight: 100;
+}
+h5, .h5 {
+    font-size: 14px;
+    line-height: 19px;
+    padding: 0 0 25px 0;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+h6, .h6 {
+    font-size: 14px;
+    line-height: 19px;
+    padding: 0 0 13px 0;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+
+.services{
+  padding: 60px 0px;
+}
+.services-box{
+  display: inline-block;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px dashed #dfe0e1;
+  padding-top: 40px;
+}
+.services-box:hover{
+  background: #f2f2f2;
+  cursor: pointer;
+  
+   transition: all 1s;
+  -moz-transition: all 1s; /* Firefox 4 */
+  -webkit-transition: all 1s; /* Safari and Chrome */
+  -o-transition: all 1s; /* Opera */
+}
+.services-box:hover i{
+  background: #4A89DC;
+  border-radius: 100px;
+  
+  transition: all 1s;
+  -moz-transition: all 1s; /* Firefox 4 */
+  -webkit-transition: all 1s; /* Safari and Chrome */
+  -o-transition: all 1s; /* Opera */
+}
+.icon{
+  padding: 0px;
+  float: left;
+  margin-right: 20px;
+  padding-bottom:30px
+}
+.icon i{
+  width: 70px;
+  height: 70px;
+  background: #5D9CEC;
+  color: #ffffff;
+  line-height: 70px;
+  text-align: center;
+  font-size: 44px;
+}
+.service-content{
+
+}
+.service-content h4{
+  font-size: 18px;
+  font-weight: 900;
+  height: 35px;
+}

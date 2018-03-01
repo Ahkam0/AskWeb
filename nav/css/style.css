@@ -36,8 +36,8 @@ Stretchy Nav style - common to:
 
 -------------------------------- */
 .cd-stretchy-nav {
-  position: fixed;
-  z-index: 2;
+  position: absolute;
+  z-index: 99;
   top: 40px;
   right: 5%;
   pointer-events: none;
