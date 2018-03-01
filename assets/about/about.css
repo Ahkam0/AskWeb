@@ -1,0 +1,103 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Tahoma, sans-serif;
+  overflow: hidden;
+  background-color: #604087;
+}
+
+button {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9;
+  padding: 0.75em 1em;
+  color: #fff;
+  font-family: 'News Cycle', sans-serif;
+  text-transform: uppercase;
+  font-size: 1em;
+  font-weight: bold;
+  background: none;
+  border: 2px solid #fff;
+  border-radius: 4em;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: rgba(255, 225, 225, 0.2);
+}
+
+button:focus {
+  outline: none;
+  background-color: rgba(255, 225, 225, 0.2);
+}
+
+#up {
+  top: 5%;
+}
+
+#down {
+  bottom: 5%;
+}
+
+article {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+}
+
+.left,
+.right {
+  position: absolute;
+  display: table;
+  width: 50%;
+  height: 100%;
+  top: 0;
+  transition: transform 1s;
+}
+
+.left {
+  left: 0;
+  transform: translateY(-100%);
+  background-color: #8e51a9;
+}
+
+.right {
+  right: 0;
+  transform: translateY(100%);
+  background-color: #7851a9;
+}
+
+article:nth-child(even) .left {
+  background-color: #b083c4 ;
+}
+
+article:nth-child(even) .right {
+}
+
+.visible .left,
+.visible .right {
+  z-index: 1;
+}
+
+.visible .left,
+.visible .right {
+  transform: translateY(0);
+}
+
+.left > div,
+.right > div {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 25px;
+}
