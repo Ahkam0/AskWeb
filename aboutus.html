@@ -7,10 +7,35 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <link href="assets/about/about.css" rel="stylesheet"/>
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="nav/css/reset.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="nav/css/style.css"> <!-- Resource style -->
+	<script src="nav/js/modernizr.js"></script> <!-- Modernizr -->
+  
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
   </head>
 <body>
+	
+	<nav class="cd-stretchy-nav">
+		<a class="cd-nav-trigger" href="#0">
+		
+			<span aria-hidden="true"></span>
+		</a>
+
+		<ul>
+			<li><a href="index.html" class="active"><span>Home</span></a></li>
+			<li><a href="aboutus.html"><span>Who We Are</span></a></li>
+			<li><a href="services.html"><span>Services</span></a></li>
+			<li><a href="#0"><span>Price Plan</span></a></li>
+			<li><a href="contactus.html"><span>Contact Us</span></a></li>
+		</ul>
+
+		<span aria-hidden="true" class="stretchy-nav-bg"></span>
+	</nav>
+      	
+	
+	
 <button id="up">&uarr;</button>
 <button id="down">&darr;</button>
 
@@ -53,6 +78,9 @@
 		<!-- Java script -->
 		
 		<script src="assets/about/about.js"></script>
+		
+			<script src="nav/js/jquery-2.1.4.js"></script>
+<script src="nav/js/main.js"></script> <!-- Resource jQuery -->
 
 
 </body>
