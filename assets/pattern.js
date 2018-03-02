@@ -20,7 +20,8 @@ var mouseX = 0,
         amountY = 50,
         particle;
     
-    container = document.createElement( 'div' );
+    // container = document.createElement( 'div' );
+    container = document.createElement( 'mbody' );
     document.body.appendChild( container );
 
     scene = new THREE.Scene();
