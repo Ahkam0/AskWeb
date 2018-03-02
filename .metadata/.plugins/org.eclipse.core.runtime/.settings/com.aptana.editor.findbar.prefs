@@ -1,2 +1,2 @@
-FIND_BAR_DECORATOR_FIND_ENTRIES=\#\r\n\#Tue Feb 27 17\:59\:47 EST 2018\r\n3\=.contact_info .mail, .contact_info .ph\r\n2\=.contact_info .mail\r\n1\=(max-width\\\: 1024px)\r\n0\=.ph\r\n
+FIND_BAR_DECORATOR_FIND_ENTRIES=\#\r\n\#Thu Mar 01 08\:22\:03 EST 2018\r\n5\=.slide__title\r\n4\=skrollr\r\n3\=card\r\n2\=fond\r\n1\=entry-title\r\n0\=who we are\r\n
 eclipse.preferences.version=1
