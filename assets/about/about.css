@@ -3,13 +3,14 @@ body {
   overflow-y: hidden;
 }
 .slides-nav {
-  z-index: 99;
-  position: fixed;
-  right: -5%;
-  display: flex;
-  align-items: center;
-  height: 100%;
-  color: #111;
+    z-index: 99;
+    position: fixed;
+    right: -5%;
+    display: flex;
+    align-items: center;
+    height: 13%;
+    color: #111;
+    margin-top: 40%;
 }
 @media (min-width: 54em) {
   .slides-nav {
