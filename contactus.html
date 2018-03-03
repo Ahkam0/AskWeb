@@ -14,10 +14,50 @@
 
 
 	<link href="assets/contact/contact.css" rel="stylesheet" />
+	
+	<style>
+
+/* Blurred class
+
+This class is added to the container 
+(#blurMe) when the sidebar is open.
+-----------------------------------*/
+.blurred {
+  -webkit-transition: all 0.6s ease;
+  transition: all 0.6s ease;
+  -webkit-filter: blur(10px);
+  filter: blur(10px);
+  -webkit-filter: url(#blur);
+  filter: url(#blur);
+  filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius='10');
+}
+
+/* Logo effect
+-----------------------------*/
+@-webkit-keyframes blur {
+  66% {
+    -webkit-filter: blur(1px);
+    filter: blur(1px);
+    -webkit-filter: url(#blurLogo);
+    filter: url(#blurLogo);
+    filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius='1');
+  }
+}
+@keyframes blur {
+  66% {
+    -webkit-filter: blur(1px);
+    filter: blur(1px);
+    -webkit-filter: url(#blurLogo);
+    filter: url(#blurLogo);
+    filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius='1');
+  }
+}
+</style>
+
 </head>
 <body>
 	
-	<nav class="cd-stretchy-nav">
+	<nav class="cd-stretchy-nav" id = "trigger">
 		<a class="cd-nav-trigger" href="#0">
 		
 			<span aria-hidden="true"></span>
@@ -25,16 +65,17 @@
 
 		<ul>
 			<li><a href="index.html" class="active"><span>Home</span></a></li>
-			<li><a href="aboutus.html"><span>Who We Are</span></a></li>
-			<li><a href="services.html"><span>Services</span></a></li>
-			<li><a href="#0"><span>Price Plan</span></a></li>
+			<li><a href="who.html"><span>Who We Are</span></a></li>
+			<li><a href="aboutus.html"><span>Services</span></a></li>
 			<li><a href="contactus.html"><span>Contact Us</span></a></li>
+			
 		</ul>
 
 		<span aria-hidden="true" class="stretchy-nav-bg"></span>
 	</nav>
+	<div id="container">
 	
-	<div id=world><svg id="paradise" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 832.77 414.9" width="100%" height="100%" preserveAspectRatio="xMinYMin meet"><clipPath id="clip"><circle cx="661.8" cy="245" r="1.9" id="c"/></clipPath><circle cx="661.8" cy="245" r="1.9" fill="#70d1ed"/><image xlink:href="https://pickjb.com/assets/images/heart-shaped-island-for-interactive-svg-map-on-codepen.jpg" width="100%" height="100%" viewBox="0 0 1440 780" clip-path="url(#clip)" preserveAspectRatio="xMidYMid slice" clipPathUnits="objectBoundingBox"/></svg>
+	<div id="world"></svg id="paradise" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 832.77 414.9" width="100%" height="100%" preserveAspectRatio="xMinYMin meet"><clipPath id="clip"><circle cx="661.8" cy="245" r="1.9" id="c"/></clipPath><circle cx="661.8" cy="245" r="1.9" fill="#70d1ed"/><image xlink:href="https://pickjb.com/assets/images/heart-shaped-island-for-interactive-svg-map-on-codepen.jpg" width="100%" height="100%" viewBox="0 0 1440 780" clip-path="url(#clip)" preserveAspectRatio="xMidYMid slice" clipPathUnits="objectBoundingBox"/></svg>
 		<div class="contact_info">
         <div class="ph">+92 123456789</div>
         <div class="mail">info@asksystem.com</div>
@@ -42,7 +83,8 @@
       </div>
 	</div>
 
-<div id=container>
+
+	
 	
 	
 	
@@ -60,5 +102,64 @@
 	<script src="nav/js/jquery-2.1.4.js"></script>
 <script src="nav/js/main.js"></script> <!-- Resource jQuery -->
      
+          
+
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <filter id="blur">
+    <feGaussianBlur stdDeviation="10" />
+  </filter>
+
+  <filter id="blurLogo">
+    <feGaussianBlur stdDeviation="1" />
+  </filter>
+</svg>
+<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js'></script>
+<script>
+$(document).ready(function(){
+
+
+// Toggle the blurred class
+function sidebar(){
+  var trigger = $('#trigger, #close'),
+  menu = $('.sidebar');
+  
+
+  trigger.on('click',function(){
+  	 $('#container').toggleClass('blurred');// just here
+   $(this).toggleClass('active');
+   menu.toggleClass('closed');
+  });
+}
+
+
+
+
+ function deploy(){
+  sidebar();
+ }
+
+ deploy();
+
+});
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+	
+
+     
+     		
+
 </body>
 </html>

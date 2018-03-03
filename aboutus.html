@@ -20,15 +20,52 @@
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
   
+  <style>
+
+/* Blurred class
+
+This class is added to the container 
+(#blurMe) when the sidebar is open.
+-----------------------------------*/
+.blurred {
+  -webkit-transition: all 0.6s ease;
+  transition: all 0.6s ease;
+  -webkit-filter: blur(10px);
+  filter: blur(10px);
+  -webkit-filter: url(#blur);
+  filter: url(#blur);
+  filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius='10');
+}
+
+/* Logo effect
+-----------------------------*/
+@-webkit-keyframes blur {
+  66% {
+    -webkit-filter: blur(1px);
+    filter: blur(1px);
+    -webkit-filter: url(#blurLogo);
+    filter: url(#blurLogo);
+    filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius='1');
+  }
+}
+@keyframes blur {
+  66% {
+    -webkit-filter: blur(1px);
+    filter: blur(1px);
+    -webkit-filter: url(#blurLogo);
+    filter: url(#blurLogo);
+    filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius='1');
+  }
+}
+</style>
+
+  
   </head>
 <body>
 
 
-
 	<!--=========Navigation bar==========-->
-	<nav class="cd-stretchy-nav" style="position: absolute;
-  z-index: 99;top: 40px;
-  right: 5%;">
+	<nav class="cd-stretchy-nav" id = "trigger">
 		<a class="cd-nav-trigger" href="#0">
 		
 			<span aria-hidden="true"></span>
@@ -36,21 +73,19 @@
 
 		<ul>
 			<li><a href="index.html" class="active"><span>Home</span></a></li>
-			<li><a href="aboutus.html"><span>Who We Are</span></a></li>
-			<li><a href="services.html"><span>Services</span></a></li>
-			<li><a href="#0"><span>Price Plan</span></a></li>
+			<li><a href="who.html"><span>Who We Are</span></a></li>
+			<li><a href="aboutus.html"><span>Services</span></a></li>
 			<li><a href="contactus.html"><span>Contact Us</span></a></li>
+			
 		</ul>
 
 		<span aria-hidden="true" class="stretchy-nav-bg"></span>
 	</nav>
-			<!--=========/Navigation bar==========-->
-			<!--===========Slides ================-->
-			
-<!-- <div> -->
-	
 	
 <section class="slides"> 
+  
+  
+  
   
   <section class="slides-nav">
     <nav class="slides-nav__nav">
@@ -60,7 +95,7 @@
   </section>
    
 
-  <section class="slide is-active">
+  <section class="slide is-active" id = "intro">
     <div class="slide__content">
       <figure class="slide__figure"><div class="slide__img" style="background-image: url(https://source.unsplash.com/nfTA8pdaq9A/2000x1100)"></div></figure>
       <header class="slide__header">
@@ -112,22 +147,71 @@
 
   </section>
   
-<!-- </div> -->
 
-			<!--=========Navigation bar==========-->
 
   </section>
-<!-- </section>
-</div> -->
-<!--==============/slides===============-->
 
 
 		<!-- Java script -->
 		
-		<script src="assets/about/about.js"></script>
 		
-			<script src="nav/js/jquery-2.1.4.js"></script>
-			<script src="nav/js/main.js"></script> <!-- Resource jQuery -->
+		<script src="assets/about/about.js"></script>
+	 	<script src="nav/js/jquery-2.1.4.js"></script>
+		<script src="nav/js/main.js"></script> <!-- Resource jQuery -->
+		
+		
+				<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <filter id="blur">
+    <feGaussianBlur stdDeviation="10" />
+  </filter>
+
+  <filter id="blurLogo">
+    <feGaussianBlur stdDeviation="1" />
+  </filter>
+</svg>
+<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js'></script>
+<script>
+$(document).ready(function(){
+
+
+// Toggle the blurred class
+function sidebar(){
+  var trigger = $('#trigger, #close'),
+  menu = $('.sidebar');
+  
+
+  trigger.on('click',function(){
+  	 $('#intro').toggleClass('blurred');// just here
+   $(this).toggleClass('active');
+   menu.toggleClass('closed');
+  });
+}
+
+
+
+
+ function deploy(){
+  sidebar();
+ }
+
+ deploy();
+
+});
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
 
 
 </body>
