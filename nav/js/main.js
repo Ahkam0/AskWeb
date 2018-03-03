@@ -12,9 +12,7 @@ jQuery(document).ready(function(){
 			});
 		});
 
-		$(document).on('click', function(event){
-			( !$(event.target).is('.cd-nav-trigger') && !$(event.target).is('.cd-nav-trigger span') ) && stretchyNavs.removeClass('nav-is-visible');
-		});
+		
 	}
 });
 
@@ -31,11 +29,7 @@ var targeted_popup_class = jQuery(this).attr('data-popup-close');
 $('[data-popup="' + targeted_popup_class + '"]').fadeOut(350);
 e.preventDefault();
 });
-});
-
-$('[popup]').on('click', function(e)  {
-var targeted_popup_class = jQuery(this).attr('data-popup-close');
-$('[data-popup="' + targeted_popup_class + '"]').fadeOut(350);
-e.preventDefault();
 
 });
+
+

@@ -1,65 +1,56 @@
-;(function($) {
-
-$.fn.letterDrop = function() {
-  // Chainability
-  return this.each( function() { 
-  
-  var obj = $( this );
-  
-  var drop = {
-    arr : obj.text().split( '' ),
-    
-    range : {
-      min : 1,
-      max : 9
-    },
-    
-    styles : function() {
-      var dropDelays = '\n', addCSS;
-      
-       for ( i = this.range.min; i <= this.range.max; i++ ) {
-         dropDelays += '.ld' + i + ' { animation-delay: 1.' + i + 's; }\n';  
-       }
-      
-        addCSS = $( '<style>' + dropDelays + '</style>' );
-        $( 'head' ).append( addCSS );
-    },
-    
-    main : function() {
-      var dp = 0;
-      obj.text( '' );
-      
-      $.each( this.arr, function( index, value ) {
-
-        dp = dp.randomInt( drop.range.min, drop.range.max );
-        
-        if ( value === ' ' )
-          value = '&nbsp'; //Add spaces
-        
-          obj.append( '<span class="letterDrop ld' + dp + '">' + value + '</span>' );
-        
-      });
-          
-    }
-  };
-   
-  Number.prototype.randomInt = function ( min, max ) {
-    return Math.floor( Math.random() * ( max - min + 1 ) + min );
-  };
-  
-  
-  // Create styles
-  drop.styles();
-
-
-    // Initialise
-    drop.main();
-  });
-
+var TxtRotate = function(el, toRotate, period) {
+  this.toRotate = toRotate;
+  this.el = el;
+  this.loopNum = 0;
+  this.period = parseInt(period, 10) || 2000;
+  this.txt = '';
+  this.tick();
+  this.isDeleting = false;
 };
 
-}(jQuery));
+TxtRotate.prototype.tick = function() {
+  var i = this.loopNum % this.toRotate.length;
+  var fullTxt = this.toRotate[i];
 
+  if (this.isDeleting) {
+    this.txt = fullTxt.substring(0, this.txt.length - 1);
+  } else {
+    this.txt = fullTxt.substring(0, this.txt.length + 1);
+  }
 
-// USAGE
-$( '.dropthis' ).letterDrop();
+  this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+  var that = this;
+  var delta = 300 - Math.random() * 100;
+
+  if (this.isDeleting) { delta /= 2; }
+
+  if (!this.isDeleting && this.txt === fullTxt) {
+    delta = this.period;
+    this.isDeleting = true;
+  } else if (this.isDeleting && this.txt === '') {
+    this.isDeleting = false;
+    this.loopNum++;
+    delta = 500;
+  }
+
+  setTimeout(function() {
+    that.tick();
+  }, delta);
+};
+
+window.onload = function() {
+  var elements = document.getElementsByClassName('txt-rotate');
+  for (var i=0; i<elements.length; i++) {
+    var toRotate = elements[i].getAttribute('data-rotate');
+    var period = elements[i].getAttribute('data-period');
+    if (toRotate) {
+      new TxtRotate(elements[i], JSON.parse(toRotate), period);
+    }
+  }
+  // INJECT CSS
+  var css = document.createElement("style");
+  css.type = "text/css";
+  css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
+  document.body.appendChild(css);
+};
