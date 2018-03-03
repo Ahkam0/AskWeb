@@ -44,7 +44,168 @@ This class is added to the container
     filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius='1');
   }
 }
+
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+h5 {
+  color: #333;
+  font-family: source sans pro;
+  font-size: 3rem;
+  font-weight: 100;
+  line-height: 1.5;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  position: relative;
+  width: 500px;
+}
+.message {
+  background-color:#4B0082;
+  color: #FFFFFF;
+  display: block;
+  font-weight: 900;
+  overflow: hidden;
+  position: absolute;
+  padding-left: 0.5rem;
+  top: 0.2rem;
+  left: 220px;
+  -webkit-animation: openclose 10s ease-in-out infinite;
+          animation: openclose 10s ease-in-out infinite;
+}
+.word1 {
+  font-family: Abril Fatface;
+}
+.word2 {
+  font-family: source code pro;
+}
+.word3 {
+  font-family: Permanent Marker;
+}
+@-webkit-keyframes openclose {
+  0% {
+    top: 0.2rem;
+    width: 0;
+  }
+  5% {
+    width: 0;
+  }
+  15% {
+    width: 230px;
+  }
+  30% {
+    top: 0.2rem;
+    width: 230px;
+  }
+  33% {
+    top: 0.2rem;
+    width: 0;
+  }
+  38% {
+    top: -4.5rem;
+    width: 0;
+  }
+  48% {
+    width: 190px;
+  }
+  62% {
+    top: -4.5rem;
+    width: 190px;
+  }
+  66% {
+    top: -4.5rem;
+    width: 0;
+    text-indent: 0;
+  }
+  71% {
+    top: -9rem;
+    width: 0;
+    text-indent: 5px;
+  }
+  86% {
+    width: 285px;
+  }
+  98% {
+    top: -9rem;
+    width: 285px;
+  }
+  99% {
+    text-indent: 5px;
+    top: -9rem;
+    width: 0;
+  }
+  100% {
+    text-indent: 0;
+    top: 0;
+    width: 0;
+  }
+}
+@keyframes openclose {
+  0% {
+    top: 0.2rem;
+    width: 0;
+  }
+  5% {
+    width: 0;
+  }
+  15% {
+    width: 230px;
+  }
+  30% {
+    top: 0.2rem;
+    width: 230px;
+  }
+  33% {
+    top: 0.2rem;
+    width: 0;
+  }
+  38% {
+    top: -4.5rem;
+    width: 0;
+  }
+  48% {
+    width: 190px;
+  }
+  62% {
+    top: -4.5rem;
+    width: 190px;
+  }
+  66% {
+    top: -4.5rem;
+    width: 0;
+    text-indent: 0;
+  }
+  71% {
+    top: -9rem;
+    width: 0;
+    text-indent: 5px;
+  }
+  86% {
+    width: 285px;
+  }
+  98% {
+    top: -9rem;
+    width: 285px;
+  }
+  99% {
+    text-indent: 5px;
+    top: -9rem;
+    width: 0;
+  }
+  100% {
+    text-indent: 0;
+    top: 0;
+    width: 0;
+  }
+}
+
 </style>
+
+
+
+
+
 
 
 <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
@@ -70,14 +231,17 @@ This class is added to the container
    <link href="assets/index/index.css" rel="stylesheet" />
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
-
+	
+	<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css' />
+	<link href='https://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css' />
+	<link href='https://fonts.googleapis.com/css?family=Abril\+Fatface' rel='stylesheet' type='text/css' />
+  
   <link href="test.css" rel="stylesheet"/>
 	</head>
-	
+
 <body style="overflow: hidden; background-image: linear-gradient(to right, #7851a9, #533875)">
 
 <!-- main content here -->
-
 
 
  <nav class="cd-stretchy-nav " id = "trigger">
@@ -97,13 +261,23 @@ This class is added to the container
 		<span aria-hidden="true" class="stretchy-nav-bg"></span>
 	</nav>
       	
+<div style="position: absolute; z-index: 111; margin-top: 7%; margin-left: 2%;  padding: 1em 2em; font-size: 18px; ">
+  	
+  	<h1 style="font-family: 'Raleway', sans-serif;">We Are
+  <span
+  style="color : #FFFFFF"
+     class="txt-rotate"
+     data-period="2000"
+     data-rotate='[ "Creative.", "Impresive.", "Agile.", "Complete.", "ASK Systems!" ]'></span>
+</h1>
+  </div>
 
-  
 <!-- main content here -->
 
 
 <!-- Section: home video -->
   <section id="intro" class="home-video text-light">
+
   	
  
 	<div class="home-video-wrapper">
@@ -128,11 +302,32 @@ This class is added to the container
             <div class="margintop-30">
               <a href="aboutus.html" class="btn btn-skin" style="background: #533875; border-color: #533875;" id="btn-scroll">Lets Start</a>
             </div>
+            
+            
+   
+     
           </div> 
- 
+          
+
+
+        
       </div> 
 
+
+
      </div>
+     
+   <div style="margin: 5%">                        
+<h5 style=" color: #FFFFFF; font-family: source sans pro; font-size: 3rem; font-weight: 100;  line-height: 1.5; text-transform: uppercase; white-space: nowrap; overflow: hidden; position: relative; width: 500px;">
+	Always Be
+  <div class="message" > 
+    <div class="word1">closing</div>
+    <div class="word2">coding</div>
+    <div class="word3">creating</div>
+  </div>
+</h5>
+</div>
+	
      </div>
      
      
@@ -229,5 +424,71 @@ function sidebar(){
   })();
 
 </script>
+
+
+<script>
+	
+	var TxtRotate = function(el, toRotate, period) {
+  this.toRotate = toRotate;
+  this.el = el;
+  this.loopNum = 0;
+  this.period = parseInt(period, 10) || 2000;
+  this.txt = '';
+  this.tick();
+  this.isDeleting = false;
+};
+
+TxtRotate.prototype.tick = function() {
+  var i = this.loopNum % this.toRotate.length;
+  var fullTxt = this.toRotate[i];
+
+  if (this.isDeleting) {
+    this.txt = fullTxt.substring(0, this.txt.length - 1);
+  } else {
+    this.txt = fullTxt.substring(0, this.txt.length + 1);
+  }
+
+  this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+  var that = this;
+  var delta = 300 - Math.random() * 100;
+
+  if (this.isDeleting) { delta /= 2; }
+
+  if (!this.isDeleting && this.txt === fullTxt) {
+    delta = this.period;
+    this.isDeleting = true;
+  } else if (this.isDeleting && this.txt === '') {
+    this.isDeleting = false;
+    this.loopNum++;
+    delta = 500;
+  }
+
+  setTimeout(function() {
+    that.tick();
+  }, delta);
+};
+
+window.onload = function() {
+  var elements = document.getElementsByClassName('txt-rotate');
+  for (var i=0; i<elements.length; i++) {
+    var toRotate = elements[i].getAttribute('data-rotate');
+    var period = elements[i].getAttribute('data-period');
+    if (toRotate) {
+      new TxtRotate(elements[i], JSON.parse(toRotate), period);
+    }
+  }
+  // INJECT CSS
+  var css = document.createElement("style");
+  css.type = "text/css";
+  css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
+  document.body.appendChild(css);
+};
+	
+	
+	
+</script>
+
+
 </body>
 </html>
