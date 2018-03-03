@@ -1,56 +1,174 @@
-var TxtRotate = function(el, toRotate, period) {
-  this.toRotate = toRotate;
-  this.el = el;
-  this.loopNum = 0;
-  this.period = parseInt(period, 10) || 2000;
-  this.txt = '';
-  this.tick();
-  this.isDeleting = false;
-};
-
-TxtRotate.prototype.tick = function() {
-  var i = this.loopNum % this.toRotate.length;
-  var fullTxt = this.toRotate[i];
-
-  if (this.isDeleting) {
-    this.txt = fullTxt.substring(0, this.txt.length - 1);
-  } else {
-    this.txt = fullTxt.substring(0, this.txt.length + 1);
+$(document).ready(function() {
+  /*
+   * Main variables
+   */
+  var content = [{
+    title: "Hi! I'm Justus Tumacder.",
+    desc: "Welcome to my alphabet soup demo!"
+  }, {
+    title: "Lorem ipsum",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  }, {
+    title: "dolor sit amet",
+    desc: "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  }, {
+    title: "Grouping example",
+    desc: [
+      ["<u>Grouped text</u>"], " separate text".split("")
+    ]
+  }];
+  var currentPage = 0;
+  //generate content
+  for (var i = 0; i < content.length; i++) {
+    //split content letters to array
+    for (var obj in content[i]) {
+      //if string
+      if (typeof content[i][obj] === "string") {
+        content[i][obj] = content[i][obj].split("");
+        continue;
+      }
+      //if array (grouped text)
+      else if (typeof content[i][obj] === "object") {
+        var toPush = [];
+        for(var j = 0; j < content[i][obj].length; j++) {
+          for(var k = 0; k < content[i][obj][j].length; k++) {
+            toPush.push(content[i][obj][j][k]);
+          }
+        }
+        content[i][obj] = toPush;
+      }
+    }
+    //set text to 
+    $("#segments").append("<div class=\"letters-wrap mutable\"><div class=\"soup-title\"></div><div class=\"soup-desc\"></div></div>");
+    setText();
+    //clone to data
+    $("#segments").append("<div class=\"letters-wrap position-data\"><div class=\"soup-title\"></div><div class=\"soup-desc\"></div></div>");
+    setText();
   }
-
-  this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
-
-  var that = this;
-  var delta = 300 - Math.random() * 100;
-
-  if (this.isDeleting) { delta /= 2; }
-
-  if (!this.isDeleting && this.txt === fullTxt) {
-    delta = this.period;
-    this.isDeleting = true;
-  } else if (this.isDeleting && this.txt === '') {
-    this.isDeleting = false;
-    this.loopNum++;
-    delta = 500;
+  //initial arrangement
+  arrangeCurrentPage();
+  scrambleOthers();
+  /*
+   * Event handlers
+   */
+  $(window).resize(function() {
+    arrangeCurrentPage();
+    scrambleOthers();
+  });
+  $("#soup-prev").hide();
+  
+ $(window).scroll(function() {
+   if($(window).scrollTop() + $(window).height() == $(document).height()) {
+       
+   
+       	
+  
+    currentPage--;
+    ngeCurrentPage();
+    scrambleOthers();
   }
+  
+  else {
+  	
 
-  setTimeout(function() {
-    that.tick();
-  }, delta);
-};
-
-window.onload = function() {
-  var elements = document.getElementsByClassName('txt-rotate');
-  for (var i=0; i<elements.length; i++) {
-    var toRotate = elements[i].getAttribute('data-rotate');
-    var period = elements[i].getAttribute('data-period');
-    if (toRotate) {
-      new TxtRotate(elements[i], JSON.parse(toRotate), period);
+  
+    
+    currentPage++;
+    arrangeCurrentPage();
+    scrambleOthers();
+ 
+  	
+  	
+  }
+  
+   }
+);
+ 
+ 
+  $("#soup-prev").click(function() {
+    $("#soup-next").show();
+    currentPage--;
+    if (currentPage === 0) {
+      $("#soup-prev").hide();
+    }
+    arrangeCurrentPage();
+    scrambleOthers();
+  });
+  $("#soup-next").click(function() {
+    $("#soup-prev").show();
+    currentPage++;
+    if (currentPage === content.length - 1) {
+      $("#soup-next").hide();
+    }
+    arrangeCurrentPage();
+    scrambleOthers();
+  });
+  /*
+   * Functions
+   */
+  function arrangeCurrentPage() {
+    for (var i = 0; i < content[currentPage].title.length; i++) {
+      $(".mutable:eq(" + currentPage + ") > .soup-title > .letter").eq(i).css({
+        left: $(".position-data:eq(" + currentPage + ") > .soup-title > .letter").eq(i).offset().left + "px",
+        top: $(".position-data:eq(" + currentPage + ") > .soup-title > .letter").eq(i).offset().top + "px",
+        color: "#111",
+        zIndex: 9001
+      });
+    }
+    for (var i = 0; i < content[currentPage].desc.length; i++) {
+      $(".mutable:eq(" + currentPage + ") > .soup-desc > .letter").eq(i).css({
+        left: $(".position-data:eq(" + currentPage + ") > .soup-desc > .letter").eq(i).offset().left + "px",
+        top: $(".position-data:eq(" + currentPage + ") > .soup-desc > .letter").eq(i).offset().top + "px",
+        color: "#111",
+        zIndex: 9001
+      });
     }
   }
-  // INJECT CSS
-  var css = document.createElement("style");
-  css.type = "text/css";
-  css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
-  document.body.appendChild(css);
-};
+
+  function setText() {
+    var j;
+    for (j = 0; j < content[i].title.length; j++) {
+      $(".soup-title").last().append("<span class=\"letter\">" + content[i].title[j] + "</span>");
+    }
+    for (j = 0; j < content[i].desc.length; j++) {
+      $(".soup-desc").last().append("<span class=\"letter\">" + content[i].desc[j] + "</span>");
+    }
+  }
+
+  function scrambleOthers() {
+    for (var i = 0; i < content.length; i++) {
+      //don't scramble currentPage
+      if (currentPage === i)
+        continue;
+      var parts = [
+        ["title", ".soup-title"],
+        ["desc", ".soup-desc"]
+      ];
+      //apply to .title h1s and .desc ps
+      for (var j = 0; j < parts.length; j++) {
+        for (var k = 0; k < content[i][parts[j][0]].length; k++) {
+          //define random position on screen
+          var randLeft = Math.floor(Math.random() * $(window).width());
+          var randTop = Math.floor(Math.random() * $(window).height());
+          //defining boundaries
+          var offset = $(".position-data").eq(currentPage).offset();
+          var bounds = {
+            left: offset.left,
+            top: offset.top,
+            right: $(window).width() - offset.left,
+            bottom: $(window).height() - offset.top
+          };
+          var middleX = bounds.left + $(".position-data").eq(currentPage).width() / 2;
+          var middleY = bounds.top + $(".position-data").eq(currentPage).height() / 2;
+          //finally, apply all the scrambles
+          $(".mutable:eq(" + i + ") > " + parts[j][1] + " > .letter").eq(k).css({
+            left: randLeft,
+            top: randTop,
+            color: "#DDD",
+            zIndex: "initial"
+          });
+        }
+      }
+    }
+  }
+});
