@@ -26,11 +26,15 @@
     /**
      * Bind our click, scroll, key events
      */
+    
     bindEvents: function(){
       
       // Scrollwheel & trackpad
       s.slides.on({
         'DOMMouseScroll mousewheel' : SliceSlider.nextSlide
+      });
+      s.slides.on({
+      	'DOMMouseScroll touchmove'	: SliceSlider.nextSlide
       });
       // On click prev
       s.navPrev.on({
