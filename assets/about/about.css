@@ -124,7 +124,7 @@ body {
 }
 @media (min-width: 54em) {
   .slide__title {
-    font-size: 5em;
+    font-size: 3em;
   }
 }
 .slide__title .title-line {

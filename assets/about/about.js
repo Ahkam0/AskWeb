@@ -30,7 +30,7 @@
       
       // Scrollwheel & trackpad
       s.slides.on({
-        'DOMMouseScroll mousewheel' : SliceSlider.nextSlide
+        'DOMScroll mousewheel' : SliceSlider.nextSlide
       });
       // On click prev
       s.navPrev.on({
