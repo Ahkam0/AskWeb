@@ -21,9 +21,7 @@
   <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
   
   <style>
-
 /* Blurred class
-
 This class is added to the container 
 (#blurMe) when the sidebar is open.
 -----------------------------------*/
@@ -36,7 +34,6 @@ This class is added to the container
   filter: url(#blur);
   filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius='10');
 }
-
 /* Logo effect
 -----------------------------*/
 @-webkit-keyframes blur {
@@ -98,31 +95,24 @@ This class is added to the container
 
   <section class="slide is-active" id = "intro">
     <div class="slide__content">
-
       <figure class="slide__figure"><div class="slide__img" style="background-image: url(img/service4.jpg)"></div></figure>
       <header class="slide__header">
         <h2 class="slide__title">
           <span class="title-line"><span>Monetize:</span></span>
-          <span class="title-line" style="font-size: large; line-height: 30px; margin-top: 20px; width: 50%;"><span>Drive mobile app advertising revenue by integrating banner, interstitial, or video ads seamlessly into your app. ASK systems provide variety of formats, means you have lots of choices to provide the best user experience by integrating adds in your running applications.</span></span>
-
+          <span class="title-line" style="font-size: large; line-height: 30px; margin-top: 20px; width: 50%; color: #000"><span>Drive mobile app advertising revenue by integrating banner, interstitial, or video ads seamlessly into your app. ASK systems provide variety of formats, means you have lots of choices to provide the best user experience by integrating adds in your running applications.</span></span>
         </h2>
       </header>
-      
-         
 
     </div>
-    
-    
   </section>
 
   <section class="slide">
     <div class="slide__content">
-
-      <figure class="slide__figure"><div class="slide__img" style="background-image: url(img/service2.jpg)"></div></figure>
+      <figure class="slide__figure"><div class="slide__img" style="background-image: url(img/service5.jpg)"></div></figure>
       <header class="slide__header">
         <h2 class="slide__title">
           <span class="title-line"><span>Make accessible:</span></span>
-          <span class="title-line" style="font-size: large; line-height: 30px; margin-top: 20px; width: 90%"><span>You work hard running your small business, so let your Android smartphone or tablet help you by running your business. Desktop PC apps keep you on top of things at the office, but why stay chained to your desk when you have a powerful computer right in your pocket? ASK Systems provide you the solution for this, by integrating your running business with your smart phones.</span></span>
+          <span class="title-line" style="font-size: large; line-height: 30px; margin-top: 20px; width: 90%; color: #000"><span>You work hard running your small business, so let your Android smartphone or tablet help you by running your business. Desktop PC apps keep you on top of things at the office, but why stay chained to your desk when you have a powerful computer right in your pocket? ASK Systems provide you the solution for this, by integrating your running business with your smart phones.</span></span>
         </h2>
       </header>
     </div>
@@ -131,14 +121,12 @@ This class is added to the container
 
   <section class="slide">
     <div class="slide__content">
-
       <figure class="slide__figure"><div class="slide__img" style="background-image: url(img/service3.jpg)"></div></figure>
-
       <header class="slide__header">
         <h2 class="slide__title">
           <span class="title-line"><span>Develop apps from scratch:</span></span>
-          <span class="title-line" style="font-size: large;line-height: 30px; margin-top: 20px; width: 90%"><span>Let ASK systems build the app you want and need. This service compriese of an initial meeting where we lay out the feezabliity of your desired idea. We will first assess the techinicality of your idea and then pitch to you the options through which you can decide the path to choose.
-Call or email if you have any further quries.</span></span>
+          <span class="title-line" style="font-size: large;line-height: 30px; margin-top: 20px; width: 90%; color: #000"><span>Let ASK systems build the app you want and need. This service compriese of an initial meeting where we lay out the feezabliity of your desired idea. We will first assess the techinicality of your idea and then pitch to you the options through which you can decide the path to choose.
+Call or email if you have any further queries.</span></span>
         </h2>
       </header>
 
@@ -147,11 +135,11 @@ Call or email if you have any further quries.</span></span>
 
   <section class="slide">
     <div class="slide__content">
-      <figure class="slide__figure"><div class="slide__img" style="background-image: url(img/img5.jpg)"></div></figure>
+      <figure class="slide__figure"><div class="slide__img" style="background-image: url(img/img1.jpg)"></div></figure>
       <header class="slide__header">
         <h2 class="slide__title">
           <span class="title-line"><span>Rebuild:</span></span>
-          <span class="title-line" style="font-size: large; line-height: 30px; margin-top: 20px; width: 50%"><span>We are here to upgrade your existing app so that it can compete with the market. We will first assess your current app and the feature you want to add to it. Though which we will be able to give you a rough idea of how to move forward in the upgrading process.</span></span>
+          <span class="title-line" style="font-size: large; line-height: 30px; margin-top: 20px; width: 50%; color: #000"><span>We are here to upgrade your existing app so that it can compete with the market. We will first assess your current app and the feature you want to add to it. Though which we will be able to give you a rough idea of how to move forward in the upgrading process.</span></span>
         </h2>
       </header>
     </div>
@@ -179,45 +167,33 @@ Call or email if you have any further quries.</span></span>
 <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js'></script>
 <script>
 $(document).ready(function(){
-
-
 // Toggle the blurred class
 function sidebar(){
   var trigger = $('#trigger, #close'),
   menu = $('.sidebar');
   
-
   trigger.on('click',function(){
   	 $('#intro').toggleClass('blurred');// just here
    $(this).toggleClass('active');
    menu.toggleClass('closed');
   });
 }
-
-
-
-
  function deploy(){
   sidebar();
  }
-
  deploy();
-
 });
 </script>
 <script type="text/javascript">
-
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-36251023-1']);
   _gaq.push(['_setDomainName', 'jqueryscript.net']);
   _gaq.push(['_trackPageview']);
-
   (function() {
     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
-
 </script>
 
 
