@@ -68,7 +68,7 @@ This class is added to the container
     
   
 
-<div class="word">ASK</div>
+<div class="word" id = "intro">ASK</div>
   
 		
 	<nav class="cd-stretchy-nav" id = "trigger">
@@ -128,7 +128,7 @@ This class is added to the container
 </div>
 
 
-	<div style="position: absolute; z-index: 111; margin-top: 7%; margin-left: 2%;  padding: 1em 2em; font-size: 18px; ">
+	<div style="position: absolute; z-index: 111; margin-top: 7%; margin-left: 2%;  padding: 1em 2em; font-size: 18px; " id = "intro2">
   	
   	<h1 style="font-family: 'Raleway', sans-serif; color: #FFFFFF;">We Are
   <span
@@ -176,7 +176,9 @@ function sidebar(){
   
 
   trigger.on('click',function(){
+  	 $('#intro').toggleClass('blurred');// just here
   	 $('#intro1').toggleClass('blurred');// just here
+  	 $('#intro2').toggleClass('blurred');// just here
    $(this).toggleClass('active');
    menu.toggleClass('closed');
   });
