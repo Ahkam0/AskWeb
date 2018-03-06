@@ -11,9 +11,9 @@
 
 .first_div
 {
-  background-color:#7851a9;
+  /*background-color:#7851a9;*/
   width:200px; height:200px;
-  padding: 10px;
+  /*padding: 10px;*/
   border-radius:50%;
   -webkit-animation: anim 0.7s 1 ease;
   -moz-animation: anim 0.7s 1 ease;
@@ -227,7 +227,7 @@ body {
   display: inline;
   transition: .5s ease-in-out;
   font-family: raleway, arial, sans-serif;
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
 }
 .entry-title a {
   color: white;

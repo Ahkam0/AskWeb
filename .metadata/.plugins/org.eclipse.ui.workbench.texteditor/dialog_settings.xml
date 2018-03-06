@@ -2,17 +2,19 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="who we are" key="selection"/>
+		<item value="ask" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="who we are"/>
-			<item value="entry-title"/>
-			<item value="fond"/>
-			<item value="card"/>
-			<item value="skrollr"/>
-			<item value=".slide__title"/>
+			<item value="ask"/>
+			<item value=".entry-title"/>
+			<item value="dom"/>
+			<item value="who"/>
+			<item value=".first_div"/>
+			<item value="coat the"/>
+			<item value="does not"/>
+			<item value=".fond"/>
 		</list>
 	</section>
 </section>
